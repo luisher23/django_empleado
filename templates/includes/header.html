@@ -1,0 +1,27 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary fondo">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3 fw-bold" href="#">
+        <h1 class="text-primary fw-bolder ms-4">Employee</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-5 text-center">
+          <a class="nav-link" aria-current="page" href="{% url 'empleados_app:inicio' %}">Inicio</a>
+          <a class="nav-link mx-3" href="{% url 'empleados_app:listar_empleados' %}">Buscar</a>
+          <a class="nav-link mx-3" href="{% url 'departamento_app:listar_departamentos' %}">Departamento</a>
+          <a class="nav-link mx-3" href="{% url 'empleados_app:listar_empleados_admin' %}">Administrar</a>
+        </div>
+        <div class="ms-auto">
+          <a name="" id="" class="btn btn-success me-3" href="{% url 'departamento_app:añadir_departamento' %}" role="button">
+            <i class="ti ti-user-plus me-2"></i>Agregar un departamento
+          </a>
+            <a name="" id="" class="btn btn-primary" href="{% url 'empleados_app:crear_empleado' %}" role="button">
+              <i class="ti ti-user-plus me-2"></i>Agregar un empleado
+            </a>
+        </div>
+      </div>
+    </div>
+</nav>

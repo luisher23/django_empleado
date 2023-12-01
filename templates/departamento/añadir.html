@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %} {% load crispy_forms_tags %} {% block body %} 
+
+{% include 'includes/header.html' %}
+
+<div class="container">
+    <h1 class="text-center m-auto my-4 fw-bolder">Añadir Departamento</h1>
+    <hr>
+    <div class="card w-75 text-center m-auto p-5">
+        <form method="POST">
+            {% csrf_token %}
+    
+            <!-- Sección 1: Datos Generales -->
+            <fieldset>
+                <legend class="my-3 fw-bolder fs-7">Datos Generales</legend>
+                {{ form.nombre|as_crispy_field }} 
+                {{ form.apellidos|as_crispy_field}}
+            </fieldset>
+    
+            <!-- Sección 2: Detalles del Departamento -->
+            <fieldset>
+                <legend class="my-3 fw-bolder fs-7">Detalles del Departamento</legend>
+                {{ form.departamento|as_crispy_field}} 
+                {{form.nombre_corto|as_crispy_field}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary w-100">Registrar</button>
+        </form>
+    </div>
+
+</div>
+{% endblock body %}

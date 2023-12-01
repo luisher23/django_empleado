@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form method="GET">
+        {% csrf_token %}
+        <input type="text" name="kword" id="kword" placeholder="Clave">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <ul>
+        
+        {% for i in lista_empleados  %}
+
+            <li>{{ i.first_name }} {{ i.last_name }}</li>
+            
+        {% endfor %}
+            
+    </ul>
+
+</body>
+</html>

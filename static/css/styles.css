@@ -1,0 +1,14 @@
+.nav {
+  background-color: white;
+}
+
+.boton {
+  background: linear-gradient(to right, #26BD9B, #1dda72);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+  text-decoration: none;
+}

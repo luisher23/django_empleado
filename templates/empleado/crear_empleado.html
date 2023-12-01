@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        {% block body %}
+        {% include 'includes/header.html' %}
+        <div class="container">
+            <h1 class="fw-bolder my-4 text-center">Crear nuevo Empleado</h1>
+            <hr>
+            <div class="card w-50 m-auto text-center p-5">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <p class="text-muted fs-2">Usar Ctrl-Click en computadores para seleccionar varias habilidades.</p>
+                    <button type="submit" class="btn btn-primary w-100 my-2">Añadir</button>
+                </form>
+            </div>
+        {% endblock body %}
+        </body>
+    </div>
+</html>

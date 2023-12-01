@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        {% block body %}
+        {% include 'includes/header.html' %}
+        <div class="container">
+            <h1 class="fw-bolder my-4">Departamentos de la Empresa</h1>
+            <hr class="mb-4">
+            
+            {% for dep in departamentos %}
+            <div class="card text-start fw-75">
+                <div class="row card-body">
+                    <div class="col-4 text-sm">
+                        <span class="fw-bolder me-3">Nombre:</span>{{dep.name}}
+                    </div>
+                    <div class="col-5 text-sm">
+                        <span class="fw-bolder me-3">Identificador:</span>{{dep.shor_name}}
+                    </div>
+                    <div class="col-3 text-end">
+                        <a name="" id="" class="btn btn-primary" href="{% url 'empleados_app:empleados_area' dep.name %}" role="button">
+                            <i class="ti ti-users me-2"></i>Ver empleados
+                        </a>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+            {% endblock body %}
+        </body>
+    </div>
+</html>
